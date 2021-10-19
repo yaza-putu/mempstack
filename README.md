@@ -8,7 +8,68 @@ MEMP Stack. MacOSX + Nginx + MySQL + PHP
 ```bash
 brew install nginx
 ```
-## config nginx
+# 3. Install php include php-fpm
+```bash
+brew install php
+// or spesific version
+brew install php@7.4
+```
+# 4. Install Mysql
+```bash
+brew install mysql
+```
+<hr>
+# Configuration after instalation on the top
+## first setup mysql
+- start service mysql
+```bash
+brew services start mysql
+```
+- configuration mysql
+```bash
+mysql_secure_installation
+```
+- follow the instructions until finish
+- start mysql serve
+```bash
+mysql.server start
+```
+- login to mysql from terminal with password your first setup
+```bash
+mysql -u root -p
+```
+- Change the authentication method for root as mysql_native_password to support login in phpmyadmin
+```bash
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'yourpassword';
+```
+- Reload grant tables
+```bash
+FLUSH PRIVILEGES;
+```
+- finish and exit
+```bash
+exit
+```
+
+# Config PHP
+- export path php
+```bash
+sudo nano ~/.zshrc
+// or
+sudo nano ~/.bash_profile
+```
+- add
+```conf
+export PATH="/usr/local/opt/php@7.3/bin:$PATH"
+```
+note: php@7.3 same with installed php in your mac
+- check your php and php-pfm
+```bash
+php -v
+php-fpm -v
+```
+
+# config nginx
 - create config nginx for your project with ext *.conf, ex: phpmyadmin.conf
 ```conf
 server {
@@ -61,6 +122,22 @@ sudo nginx -s stop
 ```bash
 sudo nginx -s reload
 ```
+
+## basic opration mysql
+- start
+```bash
+mysql.server start
+```
+- stop
+```bash
+mysql.server stop
+```
+note: after change config file .conf nginx must be check config with nginx-t and reload nginx with sudo nginx -s reload
+
+# Finish
+cek your with localhost:9090 (config port on file *.conf)
+
+note : first on your laptop must be run service nginx and mysql
 
 
 
