@@ -18,7 +18,6 @@ brew install php@7.4
 ```bash
 brew install mysql
 ```
-<hr>
 # Configuration after instalation on the top
 ## first setup mysql
 - start service mysql
