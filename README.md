@@ -18,7 +18,7 @@ brew install php@7.4
 ```bash
 brew install mysql
 ```
-# Configuration after instalation on the top
+# Configuration after instalation finish on the top
 ## first setup mysql
 - start service mysql
 ```bash
@@ -98,7 +98,7 @@ server {
     }
 }
 ```
-- put on directory /usr/local/etc/nginx/servers
+- put to directory /usr/local/etc/nginx/servers
 note : show hidden file with keyboard shortcuts cmd + shift + .
 - make dir for log nginx
 ```bash
