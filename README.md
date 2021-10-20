@@ -136,7 +136,7 @@ note: after change config file .conf nginx must be check config with nginx-t and
 # Finish
 cek your with localhost:9090 (config port on file *.conf)
 
-note : first on your laptop must be run service nginx and mysql
+note : first on your laptop must be run service nginx (if not active), php-fpm (if not active) and mysql (if nor active)
 
 
 
